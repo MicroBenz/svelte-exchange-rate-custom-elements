@@ -7,12 +7,12 @@ import { terser } from 'rollup-plugin-terser';
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-	input: 'src/main.js',
+	input: 'src/App.svelte',
 	output: {
 		sourcemap: true,
 		format: 'iife',
 		name: 'app',
-		file: 'public/bundle.js'
+		file: '../exchange-rate-react-app/public/exchange-rates.js'
 	},
 	plugins: [
 		svelte({
@@ -22,7 +22,8 @@ export default {
 			// a separate file — better for performance
 			css: css => {
 				css.write('public/bundle.css');
-			}
+			},
+			customElement: production
 		}),
 
 		// If you have external dependencies installed from

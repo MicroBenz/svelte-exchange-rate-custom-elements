@@ -1,3 +1,4 @@
+<svelte:options tag="exchange-rates" />
 <script>
 	import { onMount } from 'svelte';
 
